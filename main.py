@@ -19,6 +19,7 @@ class ComponenteSchema(BaseModel):
     )
     estado_concervacao: str = Field(
         ..., description="Estado de conservação do item"
+        
     )
 
 # 3. Banco de dados temporário em memória
