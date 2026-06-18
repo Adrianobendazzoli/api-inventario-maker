@@ -17,6 +17,9 @@ class ComponenteSchema(BaseModel):
     categoria: str = Field(
         ..., description="Categoria do item"
     )
+    estado_concervacao: str = Field(
+        ..., description="Estado de conservação do item"
+    )
 
 # 3. Banco de dados temporário em memória
 estoque_laboratorio = [
@@ -83,6 +86,7 @@ def atualizar_componente(
             item["nome"] = dados_atualizados.nome
             item["quantidade"] = dados_atualizados.quantidade
             item["categoria"] = dados_atualizados.categoria
+            item["estado_concervacao"] = dados_atualizados.estado_concervacao
 
             return {
                 "mensagem": "Componente atualizado com sucesso!",
